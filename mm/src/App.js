@@ -33,6 +33,11 @@ function App() {
           </Routes>
         </div>
       </div>
+      <footer className="footer mt-4">
+        <div className="container text-center">
+          <p>&copy; 2022 DNG. All rights reserved.</p>
+        </div>
+      </footer>
     </Router>
   );
 }

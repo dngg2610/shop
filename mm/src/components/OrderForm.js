@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { FaShoppingCart } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function OrderForm() {
   const [fullName, setFullName] = useState('');
@@ -6,16 +9,20 @@ function OrderForm() {
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
   const [note, setNote] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     if (!fullName || !phone || !email || !address) {
-      alert('Vui lòng điền đầy đủ thông tin');
+      toast.error('Vui lòng điền đầy đủ thông tin');
       return;
     }
 
-    // Gửi thông tin đặt hàng đến API hoặc xử lý dữ liệu theo nhu cầu của bạn
+    setIsSuccess(true);
+    toast.success('Đặt hàng thành công!');
 
-    alert('Đặt hàng thành công!');
+    // Xử lý các lệnh khác sau khi đặt hàng thành công
     setFullName('');
     setPhone('');
     setEmail('');
@@ -23,8 +30,10 @@ function OrderForm() {
     setNote('');
   };
 
+
   return (
     <div>
+      <ToastContainer />
       <h3>Thông tin người mua</h3>
       <form>
         <div className="mb-3">
@@ -82,7 +91,10 @@ function OrderForm() {
           ></textarea>
         </div>
 
-        <button onClick={handleSubmit} className="btn btn-primary">Đặt hàng</button>
+        <button onClick={handleSubmit} className="btn btn-primary">
+          <FaShoppingCart className="icon" /> Đặt hàng
+        </button>
+
       </form>
     </div>
   );
