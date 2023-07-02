@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import AdminPage from './components/AdminPage';
 import ProductDetail from './components/ProductDetail';
-
+import OrderForm from './components/OrderForm';
 
 function App() {
   const [products, setProducts] = useState([
@@ -29,6 +29,7 @@ function App() {
             <Route path="/" element={<HomePage products={products} setProducts={setProducts} />} />
             <Route path="/admin" element={<AdminPage products={products} setProducts={setProducts} />} />
             <Route path="/product/:id" element={<ProductDetail products={products} />} />
+            <Route path="/buy/:id" element={<OrderForm products={products} />} />
           </Routes>
         </div>
       </div>
