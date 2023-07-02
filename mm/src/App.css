@@ -1,0 +1,85 @@
+/**phần card**/
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title,
+.card-text {
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-title,
+.card:hover .card-text {
+  color: #ff0000;
+}
+
+
+/**phần search**/
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+}
+
+.search-button {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  font-size: 16px;
+}
+
+.search-button:hover {
+  background-color: #0b7dda;
+}
+
+/**phần hover button**/
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-group a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.button-group a.btn-primary {
+  background-color: #2196F3;
+}
+
+.button-group a.btn-secondary {
+  background-color: gray;
+}
+
+.button-group a:hover {
+  background-color: lightgray;
+}
+
+.icon {
+  margin-right: 5px;
+}
