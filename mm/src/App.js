@@ -7,9 +7,9 @@ import ProductDetail from './components/ProductDetail';
 
 function App() {
   const [products, setProducts] = useState([
-    { id: 1, name: 'Mũ bảo hiểm', desc: 'Mô tả sản phẩm A', price: "540.000", image: '/images/mubh.jpg' },
-    { id: 2, name: 'Giày Nike', desc: 'Mô tả sản phẩm B', price: "5.600.000", image: '/images/nikegiay.jpg' },
-    { id: 3, name: 'Giày Adidas', desc: 'Mô tả sản phẩm C', price: "3.200.000", image: '/images/giayadidas.jpg' },
+    { id: 1, name: 'Mũ bảo hiểm', desc: 'Mô tả sản phẩm A', price: "540.000", image: process.env.PUBLIC_URL+'/images/mubh.jpg' },
+    { id: 2, name: 'Giày Nike', desc: 'Mô tả sản phẩm B', price: "5.600.000", image: process.env.PUBLIC_URL+'/images/nikegiay.jpg' },
+    { id: 3, name: 'Giày Adidas', desc: 'Mô tả sản phẩm C', price: "3.200.000", image: process.env.PUBLIC_URL+'/images/giayadidas.jpg' },
   ])
   return (
     <Router>
