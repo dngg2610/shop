@@ -7,14 +7,17 @@ import { Link } from 'react-router-dom';
 
 function AdminPage(props) {
     const { products, setProducts } = props;
+
     const [name, setName] = useState('');
     const [desc, setDesc] = useState('');
     const [price, setPrice] = useState('');
     const [selectedImage, setSelectedImage] = useState(null);
+
     const [nameError, setNameError] = useState('');
     const [priceError, setPriceError] = useState('');
     const [descError, setDescError] = useState('');
     const [imageError, setImageError] = useState('');
+     
     const [editingIndex, setEditingIndex] = useState(-1);
     const [productId, setProductId] = useState(0);
 
@@ -74,10 +77,12 @@ function AdminPage(props) {
         setProductId(uuidv4());
         setName('');
         setPrice('');
+        setDesc('');
         setSelectedImage(null);
         setNameError('');
         setPriceError('');
         setImageError('');
+        setDescError('');
     };
 
     const handleEditProduct = (index) => {
